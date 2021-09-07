@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<ul>
+    {% for gladiator in gladiators %}
+        <li><a href="{{path('edit_gladiator', {id: gladiator.id})}}">{{ gladiator.faction }}</a> - {{ gladiator.type}} - {{ gladiator.weapon }}</li>
+    {% endfor %}
+</ul>
+
+<a href="{{ path('insert_gladiator')}}">Insert gladiator</a>
+
+{% endblock %}
